@@ -65,8 +65,9 @@ export function processTitle(currentUrl, currentTitle, rule) {
 			if (selector === 'title') {
 				text = currentTitle;
 			} else {
-				text = getTextBySelector(selector);
-			}
+				if (getTextBySelector(selector) != "") {
+					text = getTextBySelector(selector);
+					} else text = "";
 
 			title = updateTitle(title, match, text);
 		});
